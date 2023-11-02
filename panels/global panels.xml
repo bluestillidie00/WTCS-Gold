@@ -1,0 +1,53 @@
+<!-- this file lists the global panels that should be installed -->
+<panel>
+	<layout class="stick_to_sides_attachment" alignment="all" inset="0"/>
+
+	<container>
+		<layout class="stick_to_sides_attachment" alignment="horizontal">
+			<global id="inset" name="calibration_inset_x" />
+		</layout>
+
+		<layout class="stick_to_sides_attachment" alignment="vertical">
+			<global id="inset" name="calibration_inset_y" />
+		</layout>
+
+
+		<!-- Add on manager helper layer -->
+		<container id="adMN" class="add_on_manager_helper_panel">
+			<layout class="stick_to_sides_attachment" alignment="all" inset="0"/>
+			<boolean id="exclude_from_find" value="true" />
+		</container>
+
+		<!-- Browser -->
+		<container class="object_browser_container" browser_class="client_object_browser" id="_CoB" >
+			<layout class="stick_to_sides_attachment" alignment="all" inset="0"/>
+		</container>
+
+		<!-- notification container -->
+		<container id="prmo">
+			<layout class="stick_to_sides_attachment" alignment="all" inset="0"/>
+			<boolean id="exclude_from_find" value="true" />
+		</container>
+
+		<!-- modal area -->
+		<container id="modl">
+			<layout class="stick_to_sides_attachment" alignment="all" inset="0"/>
+		</container>
+
+		<!-- Comment this out if the tutorial is disabled -->
+		<!-- tutorial layer -->
+		<container id="tutL" hidden="true" >
+			<layout class="stick_to_sides_attachment" alignment="all" inset="0"/>
+			<container class="tutorial_panel" wants_mouse_events="true" base_navigation_container="true">
+				<layout class="stick_to_sides_attachment" alignment="all" inset="0"/>
+			</container>
+		</container>
+
+		<!-- progress panel -->
+		<container class="game_processing_panel_container">
+			<layout class="stick_to_sides_attachment" alignment="all" inset="0" apply_to_children="true"/>
+			<layout class="stick_to_sides_attachment" alignment="all" inset="0"/>
+		</container>
+	</container>
+
+</panel>

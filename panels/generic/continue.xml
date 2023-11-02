@@ -16,7 +16,6 @@
 		<record id="secondary_icon_properties" red_replacement="secondary"/>
 		<record id="click_event" event_id="CONT" event_target="glob" />
 
-
 		<!-- We adjust the continue colour in code in some scenarios, the default colour is defined as 'continue colour' and can be adjusted in the global colour definitions 
 		COMMENTED OUT TO CHANGE COLOUR 
 		<attachment class="get_global_attachment" get_property="ctcl" set_property="colour"/>

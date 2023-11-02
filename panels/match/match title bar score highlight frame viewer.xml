@@ -1,0 +1,100 @@
+<panel>
+	<layout class="arrange_horizontal_attachment" alignment="left" gap="0" offset="0" />
+	<layout class="stick_to_sides_attachment" alignment="vertical" apply_to_children="true" inset="0" />
+
+	<attachment class="match_ball_fade_attachment"/>
+
+	<container class="main_box" appearance="boxes/custom/match/scoreboard/container/paper">
+
+		<layout class="arrange_horizontal_attachment" alignment="horizontal" gap="0" offset="0" />
+		<layout class="fit_children_attachment" alignment="horizontal,fill" gap="0" offset="0" />
+		<layout class="stick_to_sides_attachment" alignment="vertical" apply_to_children="true" inset="0" />
+
+		<!--clock-->
+		<widget class="text" id="Mclk" size="12" width="80" alignment="centre" style="semi_bold" colour="white">
+			<layout class="stick_to_sides_attachment" alignment="top" inset="1" />
+		</widget>
+		<widget class="text" id="Mijt" size="8" width="40" alignment="centre" colour="match scoreboard added time" style="semi_bold">
+			<layout class="stick_to_sides_attachment" alignment="top" inset="1" />
+		</widget>
+
+		<!-- home team -->
+		<container>
+			<layout class="fit_children_attachment" alignment="horizontal" offset="0" gap="0" />
+			<layout class="stick_to_sides_attachment" alignment="vertical" inset="0" />
+
+			<!--home team background colour-->
+			<widget class="picture" id="T1bp" auto_size="vertical" file="boxes/custom/match/scoreboard/team/paper" cached="true" rthr="68">
+				<layout class="stick_to_sides_attachment" alignment="all" inset="0" />
+			</widget>
+
+			<container>
+				<layout class="arrange_horizontal_attachment" alignment="left" gap="0" offset="0" />
+				<layout class="fit_children_attachment" alignment="horizontal,fill" offset="0" gap="0" />
+				<layout class="stick_to_sides_attachment" alignment="all" inset="0" />
+
+				<container width="15" />
+
+				<!--home team name -->
+				<widget class="text_button" id="T1nm" size="9" auto_size="horizontal" alignment="right,centre_y" style="semi_bold">
+					<layout class="stick_to_sides_attachment" alignment="vertical" inset="0" />
+				</widget>
+
+				<container width="15" />
+
+			</container>
+
+		</container>
+
+		<!--scoreboard-->
+		<widget class="text" id="Scor" size="12" width="80" alignment="centre" style="semi_bold" colour="white">
+			<layout class="stick_to_sides_attachment" alignment="top" inset="1" />
+		</widget>
+
+		<!-- away team -->
+		<container>
+			<layout class="fit_children_attachment" alignment="horizontal" offset="0" gap="0" />
+			<layout class="stick_to_sides_attachment" alignment="vertical" inset="0" />
+
+			<!--away team background colour-->
+			<widget class="picture" id="T2bp" auto_size="vertical" file="boxes/custom/match/scoreboard/team/paper" cached="true" rthr="68">
+				<layout class="stick_to_sides_attachment" alignment="all" inset="0" />
+			</widget>
+
+			<container>
+				<layout class="arrange_horizontal_attachment" alignment="left" gap="0" offset="0" />
+				<layout class="fit_children_attachment" alignment="horizontal,fill" offset="0" gap="0" />
+				<layout class="stick_to_sides_attachment" alignment="all" inset="0" />
+
+				<container width="15" />
+
+				<!--away team name -->
+				<widget class="text_button" id="T2nm" size="9" auto_size="horizontal" alignment="right,centre_y" style="semi_bold">
+					<layout class="stick_to_sides_attachment" alignment="vertical" inset="0" />
+				</widget>
+
+				<container width="15" />
+
+			</container>
+
+		</container>
+
+		<widget class="spacer" width="12" />
+
+		<!--aggregate score-->
+		<widget class="text" id="Aggg" size="12" width="60" alignment="left,centre_y" font="fonts/aggregate_score" style="shadowed, bold">
+			<layout class="stick_to_sides_attachment" alignment="top" inset="1" />
+		</widget>
+
+	</container>
+
+	<container class="main_box" appearance="boxes/custom/match/scoreboard/container/paper">
+		<layout class="arrange_horizontal_attachment" alignment="horizontal" gap="0" offset="0" />
+		<layout class="fit_children_attachment" alignment="horizontal,fill" gap="0" offset="0" />
+		<layout class="stick_to_sides_attachment" alignment="vertical" apply_to_children="true" inset="0" />
+		<layout class="stick_to_sides_attachment" alignment="right,top" inset="0" />
+		<!--controls-->
+		<widget class="match_playback_control_container" id="MpCC" file="match_viewer/match playback control container pop out player"/>
+	</container>
+
+</panel>
