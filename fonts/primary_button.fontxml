@@ -1,0 +1,8 @@
+﻿<record>
+	<string id="file_name" value="text.xml"/>
+
+    <colour id="fill_colour" name="background"/>
+
+	<real id="boldness" value="1"/>
+	
+</record>

@@ -1,0 +1,11 @@
+<record>
+	<string id="file_name" value="Supercup-Bold.otf"/>
+	<real id="font_size_small" value="8" />
+	<real id="font_size_normal" value="10" />
+	<real id="font_size_large" value="11" />
+	<real id="font_size_xlarge" value="14" />
+	<real id="font_size_xxlarge" value="16" />
+
+    <string id="capitalisation" value="upper case" />
+	<integer id="extra_spacing" value="0.6" />
+</record>
