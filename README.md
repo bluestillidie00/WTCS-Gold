@@ -1,4 +1,4 @@
-# tcs5
+# WTCS Gold
 
 ## WTCS Gold Installation Guide
 
