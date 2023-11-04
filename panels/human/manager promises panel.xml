@@ -1,0 +1,87 @@
+<panel save_session_state="true">
+	<layout class="stick_to_sides_attachment" alignment="all" apply_to_children="true" inset="0"/>
+
+	<container class="tcs_box">
+		<layout class="stick_to_sides_attachment" apply_to_children="true"/>
+
+		<container class="main_box" force_title_borders="true" navigation_container="true" default_focus="true" navigation_container_allow_empty="true">
+			<layout class="stick_to_sides_attachment" alignment="all" apply_to_children="true" inset="0"/>
+
+			<container embed_in_frame="true">
+				<attachment_group class="title_embedded_panel_left"/>
+
+				<widget class="view_menu_label" id="labl">
+					<translation id="text" translation_id="320154" type="use" value="Promises[COMMENT: player status panel; panel header title for a section listing all promises a manager has made to a player]" />
+				</widget>
+
+				<!-- the view menu -->
+				<widget class="view_menu_popup" id="vmpb" sele="acvm">
+					<global id="hidden" name="is_fmt"/>
+					<list id="items">
+						<record id="vall">
+							<translation id="text" translation_id="316650" type="use" value="All[COMMENT: search panel results tab; Show all results]" />
+						</record>
+						<record id="vbor">
+							<translation id="text" translation_id="293058" type="use" value="Board" />
+						</record>
+						<record id="vman">
+							<translation id="text" translation_id="374181" type="use" value="Other Managers[COMMENT: FR 3585; manager promises; show promises made to other managers]" />
+						</record>
+						<record id="vpla">
+							<translation id="text" translation_id="232113" type="use" value="Players" />
+						</record>
+					</list>
+					<integer id="selection" value="vall" />
+				</widget>
+			</container>
+
+			<container class="empty_state" id="nodt" header_widget="nooP" hidden="true">
+
+				<widget class="manager_text" id="nooP">
+					<translation id="text" translation_id="374449" type="use" value="[%person#1-You] have no outstanding promises at this time.[COMMENT: FR 3585; manager promises panel; string displayed when there is no data]" />
+				</widget>
+			</container>
+
+			<widget class="table" id="tabl" layout="-1,-1, 120,170,20,-1" mode="fill_rows, stripe_rows" auto_size_rows="false" fixed_size_rows="true" default_sort_column="cbar" row_height="40" row_spacing="2" column_spacing="5">
+				<list id="column_table_properties">
+					<record id="cnam">
+						<record id="widget_info" class="text" alignment="left,centre_y"/>
+						<record id="column_heading">
+							<translation id="text" translation_id="229689" type="use" value="Name" />
+						</record>
+					</record>
+					<record id="cpro">
+						<record id="widget_info" class="text" alignment="left,centre_y"/>
+						<record id="column_heading">
+							<translation id="text" translation_id="378026" type="use" value="Promise[COMMENT: FR 3585; manager promises; heading on promises table]" />
+						</record>
+					</record>
+					<record id="cbar" alignment="left,centre_y">
+						<record id="widget_info" class="horizontal_percentage_bar" label_width="0" height="10" />
+						<record id="column_heading" column_span="2">
+							<translation id="text" translation_id="230113" type="use" value="Duration" />
+						</record>
+					</record>
+					<record id="cdur">
+						<record id="widget_info" class="label" alignment="left,centre_y" />
+					</record>
+					<record id="cico">
+						<record id="widget_info" class="picture" scale_picture="false" image_alignment="centre" />
+						<record id="column_heading" column_span="2">
+							<translation id="text" translation_id="289978" type="use" value="Progress[COMMENT:person screen; achievements section; heading for achievements panel - cup progress]" />
+						</record>
+					</record>
+					<record id="csta">
+						<record id="widget_info" class="text" alignment="left,centre_y"/>
+					</record>
+				</list>
+
+				<list id="sort">
+					<integer value="cbar"/>
+					<integer value="cnam"/>
+				</list>
+			</widget>
+		</container>
+		</container>
+	</panel>
+	

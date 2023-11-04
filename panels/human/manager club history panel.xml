@@ -1,0 +1,59 @@
+<panel>
+	<layout class="stick_to_sides_attachment" alignment="all" apply_to_children="true" inset="0" />
+
+	<container class="tcs_box">
+		<translation id="title" translation_id="382298" type="use" value="Job History[COMMENT: panel title; panel showing the history of manager's club management]" />
+		<layout class="arrange_vertical_attachment" alignment="bottom,extend" offset="0" />
+		<layout class="stick_to_sides_attachment" alignment="horizontal" apply_to_children="true" inset="0" />
+
+		<widget class="table" id="tabl" mode="fill_rows, stripe_rows" layout="60, -1, -1, 80, -1, -1" fixed_size_rows="false" auto_size_rows="true" save_session_state="true">
+			<list id="headings">
+				<record alignment="left,centre_y">
+					<translation id="text" translation_id="229773" type="use" value="Year" />
+				</record>
+				<record alignment="left,centre_y">
+					<translation id="text" translation_id="229408" type="use" value="Team" />
+				</record>
+				<record alignment="left,centre_y">
+					<translation id="text" translation_id="243513" type="use" value="League" />
+				</record>
+				<record alignment="centre">
+					<translation id="text" translation_id="347290" type="use" value="Position[COMMENT: average points fate action type, teams in this position get this fate]" />
+				</record>
+				<record alignment="left,centre_y">
+					<translation id="text" translation_id="229368" type="use" value="Awards" />
+				</record>
+				<record alignment="left,centre_y">
+					<translation id="text" translation_id="335002" type="use" value="Competition Wins[COMMENT: Column heading; competitions won in season]" />
+				</record>
+			</list>
+
+			<list id="column_widget_properties">
+				<record indx="0" alignment="left,centre_y" left="4" />
+				<record indx="3" alignment="centre" />
+				<record indx="4" />
+				<record indx="5" />
+			</list>
+
+			<list id="column_table_properties">
+				<!-- Season year -->
+				<record indx="0" id="year" sort_disabled="false" sort_ascending="false" />
+				<!-- Team managed -->
+				<record indx="1" id="team" sort_disabled="false" />
+				<!-- League entered -->
+				<record indx="2" id="leag" sort_disabled="false" />
+				<!-- Final league position -->
+				<record indx="3" id="lpos" sort_disabled="false" />
+				<!-- Awards -->
+				<record indx="4" id="awar" sort_disabled="false" />
+				<!-- Competitions won -->
+				<record indx="5" id="wins" sort_disabled="false" />
+			</list>
+			<integer id="default_sort_column" value="year" />
+		</widget>
+
+		<widget class="manager_text" id="uflk" auto_size="vertical" style="semi_bold" hidden="true">
+			<translation id="text" translation_id="453031" type="use" value="* Position at time of departure[COMMENT: FR 22964; show manager's position in the league when they left club on My History Job History panel]" />
+		</widget>
+	</container>
+</panel>

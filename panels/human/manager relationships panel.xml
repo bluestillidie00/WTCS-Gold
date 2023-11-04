@@ -1,0 +1,74 @@
+﻿<panel>
+	<boolean id="save_session_state" value="true" />
+
+	<layout class="stick_to_sides_attachment" apply_to_children="true" alignment="all" inset="0" />
+
+	<container class="tcs_box">
+		<layout class="stick_to_sides_attachment" alignment="all" inset="0" apply_to_children="true"/>
+
+		<container class="main_box" force_title_borders="true" navigation_container="true">
+			<layout class="stick_to_sides_attachment" alignment="all" apply_to_children="true" inset="0" />
+
+			<container embed_in_frame="true">
+				<attachment_group class="title_embedded_panel_left"/>
+
+				<widget class="view_menu_label" id="labl">
+					<translation id="text" translation_id="308474" type="use" value="Relationships[COMMENT: Persons relationships with other people]" />
+				</widget>
+
+				<!-- the view menu -->
+				<widget class="view_menu_popup" id="vmpb" sele="acvm" navigation_focus_target="true">
+					<list id="items">
+						<record id="-1" value="-1">
+							<translation id="text" translation_id="316650" type="use" value="All[COMMENT: search panel results tab; Show all results]" />
+						</record>
+						<record id="0" value="0">
+							<translation id="text" translation_id="232113" type="use" value="Players" />
+						</record>
+						<record id="1" value="1">
+							<translation id="text" translation_id="322066" type="use" value="Own Players[COMMENT: Player search panel; filter name; exclude your own team players in the search results filter]" />
+						</record>
+						<record id="2" value="2">
+							<translation id="text" translation_id="229528" type="use" value="Staff" />
+						</record>
+						<record id="3" value="3">
+							<translation id="text" translation_id="231459" type="use" value="Managers" />
+						</record>
+						<record id="4" value="4">
+							<translation id="text" translation_id="447540" type="use" value="Agents[COMMENT: filter option to show only agents in a list of people it is possible to have relationships with]" />
+						</record>
+						<record id="5" value="5">
+							<translation id="text" translation_id="348966" type="use" value="Journalists[COMMENT: media profile; list of journalists attached to media source]" />
+						</record>
+					</list>
+					<integer id="selection" value="-1" />
+				</widget>
+			</container>
+
+			<widget class="text" id="nodt" alignment="centre_x,top" style="semi_bold" hidden="true">
+				<translation id="text" translation_id="450053" type="use" value="No relationships to display[COMMENT: no  relationships to display for human manager]" />
+			</widget>
+
+			<widget class="client_object_list_table" id="tabl" mode="fill_rows, stripe_rows" auto_size="none" row_spacing="1" column_spacing="1" database_table_type="1">
+				<boolean id="save_session_state" value="true" />
+				<list id="default_sort_column">
+					<integer value="rlhn" />
+					<integer value="PcJj" />
+					<integer value="Pclb" />
+				</list>
+				<record id="viewed_property_ids">
+					<!--Name-->
+					<record id="Pnms" />
+					<!--   club-->
+					<record id="Pclb" />
+					<!--nationality-->
+					<record id="Pnat" />
+					<!--Job-->
+					<record id="PcJj" />
+					<!--  person relationship with manager-->
+					<record id="rlhn" />
+				</record>
+			</widget>
+		</container>
+	</container>
+</panel>

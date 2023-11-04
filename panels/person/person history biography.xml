@@ -1,0 +1,36 @@
+<panel>
+	<layout class="stick_to_sides_attachment" apply_to_children="true"/>
+
+	<container class="tcs_box">
+	<translation id="title" translation_id="295867" type="use" value="History - Biography[COMMENT: player history panel; written description of the player's career and achievements]" />
+	<translation id="title" translation_id="295868" type="use" value="Biography[COMMENT: player history panel; title of biography titled box]" />
+
+		<layout class="stick_to_sides_attachment" alignment="all" inset="4" apply_to_children="true" />
+
+		<!-- A label indicating why there is sometimes no biography -->
+		<container id="nbct" hidden="true">
+			<layout class="centre_in_parent_attachment" alignment="horizontal" offset="0" apply_to_children="true" />
+			<layout class="arrange_vertical_attachment" alignment="top" offset="10" gap="0" />
+
+			<widget class="label" size="10" auto_size="all">
+				<translation id="text" translation_id="328535" type="use" value="This person does not have a biography yet.[COMMENT: person history biography; string telling the user why the biography is not shown]" />
+			</widget>
+		</container>
+
+		<!-- The biography container -->
+		<container class="scrolling_box" save_session_state="true" navigation_container="true">
+			<container>
+				<layout class="arrange_vertical_attachment" alignment="top" offset="0" gap="10" />
+				<layout class="fit_children_attachment" alignment="vertical,fill" offset="0" gap="10" />
+
+				<widget class="person_bio_text" alignment="left,top" id="biot" auto_size="vertical" spec="text" size="10" col="0" row="0" ShHi="true">
+					<layout class="stick_to_sides_attachment" alignment="horizontal" inset="0" />
+				</widget>
+				<widget class="icon_button" id="keep" auto_size="all" controller_button="y_button">
+					<translation id="text" translation_id="319822" type="use" value="Keep History After Retirement[COMMENT: action menu; keep a record of the person's history when they retire]" />
+					<layout class="centre_in_parent_attachment" alignment="horizontal" offset="0" />
+				</widget>
+			</container>
+		</container>
+	</container>
+</panel>

@@ -1,0 +1,941 @@
+<panel>
+    <boolean id="should_force_refresh" value="true" />
+
+    <translation id="title" translation_id="308072" type="use" value="Non Player Overview Panel" />
+    <layout class="stick_to_sides_attachment" alignment="all" apply_to_children="true" inset="0" />
+
+    <container class="inner_box" navigation_container="true" default_focus="true">
+        <translation id="title" translation_id="247414" type="use" value="Overview" />
+        <layout class="stick_to_sides_attachment" alignment="all" apply_to_children="true" inset="0" />
+        
+        <container class="scrolling_box" navigation_focus_target="true">
+
+            <container>
+                <attachment_group class="vertical_arrange_autosize" vertical_offset="0" vertical_gap="0" horizontal_alignment="horizontal" horizontal_inset="0" />
+
+                <!--top part of the panel-->
+                <container id="top">
+                    <attachment_group class="horizontal_arrange_vertical_autosize" horizontal_alignment="fill" horizontal_gap="0" horizontal_offset="0" vertical_inset="0" />
+
+                    <!-- Career Info Table -->
+                    <widget class="table" mode="fill_rows, stripe_rows, printable" id="cain" layout="-3, -2" navigation_container="true">
+                        <boolean id="auto_size_rows" value="true" />
+                        <flags id="auto_size" value="vertical" />
+                        <boolean id="fixed_size_rows" value="false" />
+                        <boolean id="save_session_state" value="true" />
+                        <boolean id="sdst" value="true" />
+
+                        <record id="object_property" get_property="objt" set_property="objt" />
+
+                        <!-- disable sorting on all columns -->
+                        <list id="column_table_properties">
+                            <record indx="0">
+                                <boolean id="sort_disabled" value="true" />
+                            </record>
+                            <record indx="1">
+                                <boolean id="sort_disabled" value="true" />
+                                <flags id="alignment" value="centre_y" />
+                            </record>
+                        </list>
+
+                        <!--Number of clubs managed-->
+                        <widget class="label" id="Linc" row="0" col="0">
+                            <record id="object_property">
+                                <integer id="get_property" value="Ntmm" />
+                                <boolean id="name" value="true" />
+                            </record>
+                        </widget>
+                        <widget class="text" id="Vinc" row="0" col="1" spec="text" size="normal">
+                            <record id="object_property">
+                                <integer id="get_property" value="Ntmm" />
+                            </record>
+                        </widget>
+
+                        <!--Number of nations managed-->
+                        <widget class="label" id="Linn" row="1" col="0">
+                            <record id="object_property">
+                                <integer id="get_property" value="Nntm" />
+                                <boolean id="name" value="true" />
+                            </record>
+                        </widget>
+                        <widget class="text" id="Vinn" row="1" col="1" spec="text" size="normal">
+                            <record id="object_property">
+                                <integer id="get_property" value="Nntm" />
+                            </record>
+                        </widget>
+
+                        <!--Longest at a club, and which club-->
+                        <widget class="label" id="Lilt" row="2" col="0">
+                            <record id="object_property">
+                                <integer id="get_property" value="Nltd" />
+                                <boolean id="name" value="true" />
+                            </record>
+                        </widget>
+                        <widget class="text" id="Vilt" row="2" col="1" spec="text" size="normal" />
+
+                        <!--Shortest at a club, and which club-->
+                        <widget class="label" id="List" row="3" col="0">
+                            <record id="object_property">
+                                <integer id="get_property" value="Nstd" />
+                                <boolean id="name" value="true" />
+                            </record>
+                        </widget>
+                        <widget class="text" id="Vist" row="3" col="1" spec="text" size="normal" />
+
+                        <!--Number of Awards-->
+                        <widget class="label" id="Liaw" row="4" col="0">
+                            <record id="object_property">
+                                <integer id="get_property" value="Nnaw" />
+                                <boolean id="name" value="true" />
+                            </record>
+                        </widget>
+                        <widget class="text" id="Viaw" row="4" col="1" spec="text"  size="normal">
+                            <record id="object_property">
+                                <integer id="get_property" value="Nnaw" />
+                            </record>
+                        </widget>
+
+                        <!--human only - total career earnings-->
+                        <widget class="label" id="Lice" row="5" col="0">
+                            <record id="object_property">
+                                <integer id="get_property" value="Ntce" />
+                                <boolean id="name" value="true" />
+                            </record>
+                        </widget>
+                        <widget class="value_label" id="Vice" row="5" col="1" spec="text" size="normal">
+                            <record id="object_property">
+                                <integer id="get_property" value="Ntce" />
+                            </record>
+                        </widget>
+
+                        <!--Human only - Total Game Time-->
+                        <widget class="label" id="Litg" row="6" col="0">
+                            <record id="object_property">
+                                <integer id="get_property" value="Ngda" />
+                                <boolean id="name" value="true" />
+                            </record>
+                        </widget>
+                        <widget class="text" id="Vitg" row="6" col="1" spec="text" size="normal" />
+
+                        <!--Human only - Time Spent on Holiday-->
+                        <widget class="label" id="Liho" row="7" col="0">
+                            <record id="object_property">
+                                <integer id="get_property" value="Ndoh" />
+                                <boolean id="name" value="true" />
+                            </record>
+                        </widget>
+                        <widget class="text" id="Viho" row="7" col="1" spec="text" size="normal" />
+
+                        <list id="column_widget_properties">
+                            <record indx="1">
+                                <flags id="auto_size" value="vertical" />
+                            </record>
+                        </list>
+
+                        <!-- everything should be left aligned -->
+                        <record id="default_properties">
+                            <flags id="alignment" value="left,centre_y" />
+                        </record>
+
+                        <list id="headings">
+                            <record alignment="left,centre_y" column_span="4" auto_size_minimum_height="26">
+                                <translation id="text" translation_id="308073" type="use" value="Manager Stats" />
+                            </record>
+                        </list>
+                    </widget>
+
+                    <!-- Player Info Table -->
+                    <widget class="table" mode="fill_rows, stripe_rows, printable" id="plin" layout="-1, -1">
+                        <flags id="auto_size" value="vertical" />
+                        <boolean id="auto_size_rows" value="true" />
+                        <boolean id="fixed_size_rows" value="false" />
+                        <boolean id="save_session_state" value="true" />
+                        <boolean id="sdst" value="true" />
+
+                        <record id="object_property" get_property="objt" set_property="objt" />
+
+                        <!-- disable sorting on all columns -->
+                        <list id="column_table_properties">
+                            <record indx="0">
+                                <boolean id="sort_disabled" value="true" />
+                            </record>
+                            <record indx="1">
+                                <boolean id="sort_disabled" value="true" />
+                                <flags id="alignment" value="centre_y" />
+                            </record>
+                        </list>
+
+                        <!--Number of players bought-->
+                        <widget class="label" id="Lipb" row="0" col="0">
+                            <record id="object_property">
+                                <integer id="get_property" value="Nnpb" />
+                                <boolean id="name" value="true" />
+                            </record>
+                        </widget>
+                        <widget class="text" id="Vipb" row="0" col="1" spec="text" size="normal">
+                            <record id="object_property">
+                                <integer id="get_property" value="Nnpb" />
+                            </record>
+                        </widget>
+
+                        <!--total value of players bought-->
+                        <widget class="label" id="Livb" row="1" col="0">
+                            <record id="object_property">
+                                <integer id="get_property" value="Ntpb" />
+                                <boolean id="name" value="true" />
+                            </record>
+                        </widget>
+                        <widget class="value_label" id="Vivb" row="1" col="1" spec="text" size="normal">
+                            <record id="object_property">
+                                <integer id="get_property" value="Ntpb" />
+                            </record>
+                        </widget>
+
+                        <!--Number of players sold-->
+                        <widget class="label" id="Lips" row="2" col="0">
+                            <record id="object_property">
+                                <integer id="get_property" value="Nnps" />
+                                <boolean id="name" value="true" />
+                            </record>
+                        </widget>
+                        <widget class="text" id="Vips" row="2" col="1" spec="text" size="normal">
+                            <record id="object_property">
+                                <integer id="get_property" value="Nnps" />
+                            </record>
+                        </widget>
+
+                        <!--total value of players sold-->
+                        <widget class="label" id="Livs" row="3" col="0">
+                            <record id="object_property">
+                                <integer id="get_property" value="Ntps" />
+                                <boolean id="name" value="true" />
+                            </record>
+                        </widget>
+                        <widget class="value_label" id="Vivs" row="3" col="1" spec="text" size="normal">
+                            <record id="object_property">
+                                <integer id="get_property" value="Ntps" />
+                            </record>
+                        </widget>
+
+                        <!--Highest fee Spent-->
+                        <widget class="label" id="Lifs" row="4" col="0">
+                            <record id="object_property">
+                                <integer id="get_property" value="Nhsa" />
+                                <boolean id="name" value="true" />
+                            </record>
+                        </widget>
+                        <widget class="text" id="Vifs" row="4" col="1" spec="text" size="normal" />
+
+                        <!--Highest fee Recieved-->
+                        <widget class="label" id="Lifr" row="5" col="0">
+                            <record id="object_property">
+                                <integer id="get_property" value="Nhra" />
+                                <boolean id="name" value="true" />
+                            </record>
+                        </widget>
+                        <widget class="text" id="Vifr" row="5" col="1" spec="text" size="normal" />
+
+                        <!-- Agent Fees Paid -->
+                        <widget class="label" id="Lafp" row="6" col="0">
+                            <record id="object_property">
+                                <integer id="get_property" value="Ntca" />
+                                <boolean id="name" value="true" />
+                            </record>
+                        </widget>
+                        <widget class="value_label" id="Vafp" row="6" col="1" spec="text" size="normal">
+                            <record id="object_property">
+                                <integer id="get_property" value="Ntca" />
+                            </record>
+                        </widget>
+
+                        <!--Number of players released-->
+                        <widget class="label" id="Lipr" row="7" col="0">
+                            <record id="object_property">
+                                <integer id="get_property" value="Nopr" />
+                                <boolean id="name" value="true" />
+                            </record>
+                        </widget>
+                        <widget class="text" id="Vipr" row="7" col="1" spec="text" size="normal">
+                            <record id="object_property">
+                                <integer id="get_property" value="Nopr" />
+                            </record>
+                        </widget>
+
+                        <list id="column_widget_properties">
+                            <record indx="1">
+                                <flags id="auto_size" value="vertical" />
+                            </record>
+                        </list>
+
+                        <!-- everything should be left aligned -->
+                        <record id="default_properties">
+                            <flags id="alignment" value="left,centre_y" />
+                        </record>
+
+                        <list id="headings">
+                            <record alignment="left,centre_y" column_span="4" auto_size_minimum_height="26">
+                                <translation id="text" translation_id="248440" type="use" value="Player Stats" />
+                            </record>
+                        </list>
+                    </widget>
+                </container>
+
+                <!--bottom part of the panel-->
+
+                <!-- Hall Of Fame -->
+                <widget class="table" mode="fill_rows, stripe_rows, printable" id="nphf" layout="-3, -2, -3, -2">
+                    <flags id="auto_size" value="vertical" />
+                    <boolean id="auto_size_rows" value="true" />
+                    <boolean id="fixed_size_rows" value="false" />
+                    <boolean id="save_session_state" value="true" />
+                    <boolean id="sdst" value="true" />
+
+                    <record id="object_property" get_property="objt" set_property="objt" />
+
+                    <!-- disable sorting on all columns -->
+                    <list id="column_table_properties">
+                        <record indx="0">
+                            <boolean id="sort_disabled" value="true" />
+                        </record>
+                        <record indx="1">
+                            <boolean id="sort_disabled" value="true" />
+                            <flags id="alignment" value="centre_y" />
+                        </record>
+                        <record indx="2">
+                            <boolean id="sort_disabled" value="true" />
+                        </record>
+                        <record indx="3">
+                            <boolean id="sort_disabled" value="true" />
+                            <flags id="alignment" value="left,centre_y" />
+                        </record>
+                    </list>
+
+                    <!--Highest nationality ranking-->
+                    <widget class="label" id="Lhnr" row="0" col="0">
+                        <record id="object_property">
+                            <integer id="get_property" value="Nhnr" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="text" id="Vhnr" row="0" col="1" auto_size="all" spec="text" size="normal" />
+
+                    <!--Highest nation ranking-->
+                    <widget class="label" id="Lhna" row="0" col="2">
+                        <record id="object_property">
+                            <integer id="get_property" value="Nhtr" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="text" id="Vhna" row="0" col="3" auto_size="all" spec="text" size="normal" />
+
+                    <!--Highest continental ranking -->
+                    <widget class="label" id="Lhcr" row="1" col="0">
+                        <record id="object_property">
+                            <integer id="get_property" value="Nhcr" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="text" id="Vhcr" row="1" col="1" auto_size="all" spec="text" size="normal" />
+
+                    <!--Highest International ranking -->
+                    <widget class="label" id="Lhir" row="1" col="2">
+                        <record id="object_property">
+                            <integer id="get_property" value="Nhwr" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="text" id="Vhir" row="1" col="3" auto_size="all" spec="text" size="normal" />
+
+                    <list id="column_widget_properties">
+                        <record indx="1">
+                            <flags id="auto_size" value="vertical" />
+                        </record>
+                        <record indx="3">
+                            <flags id="auto_size" value="vertical" />
+                        </record>
+                    </list>
+
+                    <!-- everything should be left aligned -->
+                    <record id="default_properties">
+                        <flags id="alignment" value="left,centre_y" />
+                    </record>
+
+                    <list id="headings">
+                        <record alignment="left,centre_y" column_span="4" auto_size_minimum_height="26">
+                            <translation id="text" translation_id="247122" type="use" value="Hall of Fame" />
+                        </record>
+                    </list>
+                </widget>
+
+                <!-- Current Club Match Stats -->
+                <widget class="table" mode="fill_rows, stripe_rows, printable" id="clst" layout="-3,-2,-3,-2,-3,-2">
+                    <flags id="auto_size" value="vertical" />
+                    <boolean id="auto_size_rows" value="true" />
+                    <boolean id="fixed_size_rows" value="false" />
+                    <boolean id="save_session_state" value="true" />
+                    <boolean id="sdst" value="true" />
+
+                    <record id="object_property" get_property="objt" set_property="objt" />
+
+                    <list id="headings">
+                        <record alignment="left,centre_y" column_span="5" auto_size_minimum_height="26">
+                            <string id="text" value="You Shouldn't See this as replaced in code" />
+                        </record>
+                    </list>
+
+                    <!-- disable sorting on all columns -->
+                    <list id="column_table_properties">
+                        <record indx="0">
+                            <boolean id="sort_disabled" value="true" />
+                        </record>
+                        <record indx="1">
+                            <boolean id="sort_disabled" value="true" />
+                            <flags id="alignment" value="centre_y" />
+                        </record>
+                        <record indx="2">
+                            <boolean id="sort_disabled" value="true" />
+                        </record>
+                        <record indx="3">
+                            <boolean id="sort_disabled" value="true" />
+                            <flags id="alignment" value="centre_y" />
+                        </record>
+                        <record indx="4">
+                            <boolean id="sort_disabled" value="true" />
+                        </record>
+                        <record indx="5">
+                            <boolean id="sort_disabled" value="true" />
+                            <flags id="alignment" value="centre_y" />
+                        </record>
+                    </list>
+
+                    <!--Game Played - Club -->
+                    <widget class="label" id="Lcgp" row="0" col="0">
+                        <record id="object_property">
+                            <integer id="get_property" value="Ccmp" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="dashed_number_label" id="Vcgp" row="0" col="1" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Ccmp" />
+                        </record>
+                    </widget>
+
+                    <!--Games Won - Club -->
+                    <widget class="label" id="Lcgw" row="1" col="0">
+                        <record id="object_property">
+                            <integer id="get_property" value="Ccmw" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="dashed_number_label" id="Vcgw" row="1" col="1" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Ccmw" />
+                        </record>
+                    </widget>
+
+                    <!--Games Drawn - Club -->
+                    <widget class="label" id="Lcgd" row="2" col="0">
+                        <record id="object_property">
+                            <integer id="get_property" value="Ccmd" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="dashed_number_label" id="Vcgd" row="2" col="1" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Ccmd" />
+                        </record>
+                    </widget>
+
+                    <!--Games Lost - Club -->
+                    <widget class="label" id="Lcgl" row="3" col="0">
+                        <record id="object_property">
+                            <integer id="get_property" value="Ccml" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="dashed_number_label" id="Vcgl" row="3" col="1" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Ccml" />
+                        </record>
+                    </widget>
+
+                    <!--Goals Scored - Club -->
+                    <widget class="label" id="Lcgf" row="0" col="2">
+                        <record id="object_property">
+                            <integer id="get_property" value="Cclf" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="dashed_number_label" id="Vcgf" row="0" col="3" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Cclf" />
+                        </record>
+                    </widget>
+
+                    <!--Goals Conceded - Club -->
+                    <widget class="label" id="Lcgc" row="1" col="2">
+                        <record id="object_property">
+                            <integer id="get_property" value="Ccla" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="dashed_number_label" id="Vcgc" row="1" col="3" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Ccla" />
+                        </record>
+                    </widget>
+
+                    <!--Goal Difference - Club-->
+                    <widget class="label" id="Lcdi" row="2" col="2">
+                        <record id="object_property">
+                            <integer id="get_property" value="Ccdf" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="dashed_number_label" id="Vcdi" row="2" col="3" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Ccdf" />
+                        </record>
+                    </widget>
+
+                    <!-- Win Ratio - Club-->
+                    <widget class="label" id="Lcwr" row="3" col="2">
+                        <record id="object_property">
+                            <integer id="get_property" value="Ccwr" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="dashed_record_percentage_label" id="Vcwr" row="3" col="3" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Ccwr" />
+                        </record>
+                    </widget>
+
+                    <!--Cup Wins - Club-->
+                    <widget class="label" id="Lccu" row="0" col="4">
+                        <record id="object_property">
+                            <integer id="get_property" value="Cccw" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="text" id="Vccu" row="0" col="5" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Cccw" />
+                        </record>
+                    </widget>
+
+                    <!--League Wins - Club-->
+                    <widget class="label" id="Lcle" row="1" col="4">
+                        <record id="object_property">
+                            <integer id="get_property" value="Cclw" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="text" id="Vcle" row="1" col="5" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Cclw" />
+                        </record>
+                    </widget>
+
+                    <!--Promotions - Club-->
+                    <widget class="label" id="Lcpr" row="2" col="4">
+                        <record id="object_property">
+                            <integer id="get_property" value="Ccnp" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="text" id="Vcpr" row="2" col="5" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Ccnp" />
+                        </record>
+                    </widget>
+
+                    <!--Relegations - Club-->
+                    <widget class="label" id="Lcrl" row="3" col="4">
+                        <record id="object_property">
+                            <integer id="get_property" value="Ccnr" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="text" id="Vcrl" row="3" col="5" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Ccnr" />
+                        </record>
+                    </widget>
+
+                    <!-- everything should be left aligned -->
+                    <record id="default_properties">
+                        <flags id="alignment" value="left,centre_y" />
+                    </record>
+                </widget>
+
+                <!-- Current Nation Match Stats -->
+                <widget class="table" mode="fill_rows, stripe_rows, printable" id="nast" layout="-3,-2,-3,-2,-3,-2">
+                    <flags id="auto_size" value="vertical" />
+                    <boolean id="auto_size_rows" value="true" />
+                    <boolean id="fixed_size_rows" value="false" />
+                    <boolean id="save_session_state" value="true" />
+                    <boolean id="sdst" value="true" />
+
+                    <record id="object_property" get_property="objt" set_property="objt" />
+
+                    <list id="headings">
+                        <record alignment="left,centre_y" column_span="5" auto_size_minimum_height="26">
+                            <translation id="text" translation_id="305082" type="use" value="You Shouldn't See this as replaced in code" />
+                        </record>
+                    </list>
+
+                    <!-- disable sorting on all columns -->
+                    <list id="column_table_properties">
+                        <record indx="0">
+                            <boolean id="sort_disabled" value="true" />
+                        </record>
+                        <record indx="1">
+                            <boolean id="sort_disabled" value="true" />
+                            <flags id="alignment" value="centre_y" />
+                        </record>
+                        <record indx="2">
+                            <boolean id="sort_disabled" value="true" />
+                        </record>
+                        <record indx="3">
+                            <boolean id="sort_disabled" value="true" />
+                            <flags id="alignment" value="centre_y" />
+                        </record>
+                        <record indx="4">
+                            <boolean id="sort_disabled" value="true" />
+                        </record>
+                        <record indx="5">
+                            <boolean id="sort_disabled" value="true" />
+                            <flags id="alignment" value="centre_y" />
+                        </record>
+                    </list>
+
+                    <!--Game Played - Nation -->
+                    <widget class="label" id="Lngp" row="0" col="0">
+                        <record id="object_property">
+                            <integer id="get_property" value="Cnmp" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="dashed_number_label" id="Vngp" row="0" col="1" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Cnmp" />
+                        </record>
+                    </widget>
+
+                    <!--Games Won - Nation -->
+                    <widget class="label" id="Lngw" row="1" col="0">
+                        <record id="object_property">
+                            <integer id="get_property" value="Cnmw" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="dashed_number_label" id="Vngw" row="1" col="1" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Cnmw" />
+                        </record>
+                    </widget>
+
+                    <!--Games Drawn - Nation -->
+                    <widget class="label" id="Lngd" row="2" col="0">
+                        <record id="object_property">
+                            <integer id="get_property" value="Cnmd" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="dashed_number_label" id="Vngd" row="2" col="1" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Cnmd" />
+                        </record>
+                    </widget>
+
+                    <!--Games Lost - Nation -->
+                    <widget class="label" id="Lngl" row="3" col="0">
+                        <record id="object_property">
+                            <integer id="get_property" value="Cnml" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="dashed_number_label" id="Vngl" row="3" col="1" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Cnml" />
+                        </record>
+                    </widget>
+
+                    <!--Goals Scored - Nation -->
+                    <widget class="label" id="Lngf" row="0" col="2">
+                        <record id="object_property">
+                            <integer id="get_property" value="Cngf" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="dashed_number_label" id="Vngf" row="0" col="3" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Cngf" />
+                        </record>
+                    </widget>
+
+                    <!--Goals Conceded - Nation -->
+                    <widget class="label" id="Lngc" row="1" col="2">
+                        <record id="object_property">
+                            <integer id="get_property" value="Cnga" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="dashed_number_label" id="Vngc" row="1" col="3" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Cnga" />
+                        </record>
+                    </widget>
+
+                    <!--Goals Difference - Nation -->
+                    <widget class="label" id="Lndi" row="2" col="2">
+                        <record id="object_property">
+                            <integer id="get_property" value="Cngd" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="dashed_number_label" id="Vndi" row="2" col="3" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Cngd" />
+                        </record>
+                    </widget>
+
+                    <!-- Win Ratio - Nation -->
+                    <widget class="label" id="Lnwr" row="3" col="2">
+                        <record id="object_property">
+                            <integer id="get_property" value="Cnwr" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="dashed_record_percentage_label" id="Vnwr" row="3" col="3" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Cnwr" />
+                        </record>
+                    </widget>
+
+                    <!--Cup Wins - Nation-->
+                    <widget class="label" id="Lncu" row="0" col="4">
+                        <record id="object_property">
+                            <integer id="get_property" value="Cncw" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="text" id="Vncu" row="0" col="5" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Cncw" />
+                        </record>
+                    </widget>
+
+                    <!-- everything should be left aligned -->
+                    <record id="default_properties">
+                        <flags id="alignment" value="left,centre_y" />
+                    </record>
+                </widget>
+
+                <!-- Overall Career Stats -->
+                <widget class="table" mode="fill_rows, stripe_rows, printable" id="ovst" layout="-3,-2,-3,-2,-3,-2">
+                    <flags id="auto_size" value="vertical" />
+                    <boolean id="auto_size_rows" value="true" />
+                    <boolean id="fixed_size_rows" value="false" />
+                    <boolean id="save_session_state" value="true" />
+                    <boolean id="sdst" value="true" />
+
+                    <record id="object_property" get_property="objt" set_property="objt" />
+
+                    <!-- disable sorting on all columns -->
+                    <list id="column_table_properties">
+                        <record indx="0">
+                            <boolean id="sort_disabled" value="true" />
+                        </record>
+                        <record indx="1">
+                            <boolean id="sort_disabled" value="true" />
+                            <flags id="alignment" value="centre_y" />
+                        </record>
+                        <record indx="2">
+                            <boolean id="sort_disabled" value="true" />
+                        </record>
+                        <record indx="3">
+                            <boolean id="sort_disabled" value="true" />
+                            <flags id="alignment" value="centre_y" />
+                        </record>
+                        <record indx="4">
+                            <boolean id="sort_disabled" value="true" />
+                        </record>
+                        <record indx="5">
+                            <boolean id="sort_disabled" value="true" />
+                            <flags id="alignment" value="centre_y" />
+                        </record>
+                    </list>
+
+                    <!--Game Played - Entire Career -->
+                    <widget class="label" id="Logp" row="0" col="0">
+                        <record id="object_property">
+                            <integer id="get_property" value="Tgpl" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="dashed_number_label" id="Vogp" row="0" col="1" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Tgpl" />
+                        </record>
+                    </widget>
+
+                    <!--Games Won - Entire Career -->
+                    <widget class="label" id="Logw" row="1" col="0">
+                        <record id="object_property">
+                            <integer id="get_property" value="Tgwn" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="dashed_number_label" id="Vogw" row="1" col="1" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Tgwn" />
+                        </record>
+                    </widget>
+
+                    <!--Games Drawn - Entire Career -->
+                    <widget class="label" id="Logd" row="2" col="0">
+                        <record id="object_property">
+                            <integer id="get_property" value="Tgdw" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="dashed_number_label" id="Vogd" row="2" col="1" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Tgdw" />
+                        </record>
+                    </widget>
+
+                    <!--Games Lost - Entire Career -->
+                    <widget class="label" id="Logl" row="3" col="0">
+                        <record id="object_property">
+                            <integer id="get_property" value="Tglt" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="dashed_number_label" id="Vogl" row="3" col="1" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Tglt" />
+                        </record>
+                    </widget>
+
+                    <!--Goals Scored - Nation -->
+                    <widget class="label" id="Logf" row="0" col="2">
+                        <record id="object_property">
+                            <integer id="get_property" value="Tgfr" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="dashed_number_label" id="Vogf" row="0" col="3" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Tgfr" />
+                        </record>
+                    </widget>
+
+                    <!--Goals Conceded - Entire Career -->
+                    <widget class="label" id="Logc" row="1" col="2">
+                        <record id="object_property">
+                            <integer id="get_property" value="Tgaa" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="dashed_number_label" id="Vogc" row="1" col="3" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Tgaa" />
+                        </record>
+                    </widget>
+
+                    <!--Goals Difference - Entire Career -->
+                    <widget class="label" id="Lodi" row="2" col="2">
+                        <record id="object_property">
+                            <integer id="get_property" value="Tgdf" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="dashed_number_label" id="Vodi" row="2" col="3" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Tgdf" />
+                        </record>
+                    </widget>
+
+                    <!-- Win Ratio - Entire Career -->
+                    <widget class="label" id="Lowr" row="3" col="2">
+                        <record id="object_property">
+                            <integer id="get_property" value="Tgwr" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="dashed_record_percentage_label" id="Vowr" row="3" col="3" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Tgwr" />
+                        </record>
+                    </widget>
+
+                    <!--Cup Wins - Entire Career-->
+                    <widget class="label" id="Locu" row="0" col="4">
+                        <record id="object_property">
+                            <integer id="get_property" value="Tcpw" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="text" id="Vocu" row="0" col="5" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Tcpw" />
+                        </record>
+                    </widget>
+
+                    <!--League Wins - Entire Career -->
+                    <widget class="label" id="Lole" row="1" col="4">
+                        <record id="object_property">
+                            <integer id="get_property" value="Ctlw" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="text" id="Vole" row="1" col="5" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Ctlw" />
+                        </record>
+                    </widget>
+
+                    <!--Promotions - Entire Career -->
+                    <widget class="label" id="Lopr" row="2" col="4">
+                        <record id="object_property">
+                            <integer id="get_property" value="Ctnp" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="text" id="Vopr" row="2" col="5" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Ctnp" />
+                        </record>
+                    </widget>
+
+                    <!--Relegations - Entire Career -->
+                    <widget class="label" id="Losl" row="3" col="4">
+                        <record id="object_property">
+                            <integer id="get_property" value="Ctnr" />
+                            <boolean id="name" value="true" />
+                        </record>
+                    </widget>
+                    <widget class="text" id="Vorl" row="3" col="5" auto_size="all" spec="text" size="normal">
+                        <record id="object_property">
+                            <integer id="get_property" value="Ctnr" />
+                        </record>
+                    </widget>
+
+                    <!-- everything should be left aligned -->
+                    <record id="default_properties">
+                        <flags id="alignment" value="left,centre_y" />
+                    </record>
+
+                    <list id="headings">
+                        <record alignment="left,centre_y" column_span="6" auto_size_minimum_height="26" />
+                    </list>
+                </widget>
+            </container>
+
+        </container>
+    </container>
+</panel>

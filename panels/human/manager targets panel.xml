@@ -1,0 +1,166 @@
+﻿<panel save_session_state="true">
+
+	<record id="desF">
+		<string id="text" value="{upper}[%player_description#2][COMMENT: transfer window opening news, rumoured player moving, graphical display]" />
+		<integer id="var2" value="vf_player_description" />
+	</record>
+	
+	<layout class="stick_to_sides_attachment" alignment="all" apply_to_children="true" inset="0" />
+	
+	<container class="tcs_box">
+	<layout class="stick_to_sides_attachment" apply_to_children="true"/>
+	
+	<container class="main_box" force_title_borders="true" navigation_container="true" default_focus="true" navigation_container_allow_empty="true">
+		<attachment_group class="vertical_arrange" vertical_alignment="top,extend" vertical_gap="12" />
+
+		<translation id="title" translation_id="596177" type="use" value="Player Targets[COMMENT: AREA: Player Targets; SUB-AREA: Targets Panel; FR-BN: FM-23145; TONE: Formal; CHARLIMIT: None; REF-ID: XXXXXX; NOTE; panel header title for a section listing all targets a manager has set for a player]" />
+
+		<widget class="text" multiline="true" auto_size="vertical">
+			<translation id="text" translation_id="596176" type="use" value="Players are challenged to improve their performance or situation at the club with player targets. [COMMENT: AREA: Player Targets; SUB-AREA: Targets Panel; FR-BN: FM-23145; TONE: Formal; CHARLIMIT: None; REF-ID: XXXXXX; NOTE; explainer at top of the panel]" />
+		</widget>
+
+		<container>
+			<layout class="stick_to_sides_attachment" alignment="all" apply_to_children="true" inset="0" />
+
+			<container id="nodt" hidden="true">
+				<attachment_group class="horizontal_arrange" horizontal_layout="-1,500,-1" />
+
+				<widget class="spacer" />
+
+				<container>
+					
+					<attachment_group class="vertical_arrange_autosize" vertical_gap="12" />
+					<layout class="centre_in_parent_attachment" alignment="vertical" />
+
+					<widget class="manager_text" id="nooP" auto_size="vertical" alignment="centre" style="bold" size="large">
+						<translation id="text" translation_id="596173" type="use" value="[%person#1-You] have no outstanding targets at this time.[COMMENT: AREA: Player Targets; SUB-AREA: Targets Panel; FR-BN: FM-23145; TONE: Formal; CHARLIMIT: None; REF-ID: 374449; NOTE; string displayed when there is no data]" />
+					</widget>
+
+					<container>
+						<attachment_group class="horizontal_arrange_vertical_autosize_centre" />
+
+						<widget class="picture" height="26" width="26" file="icons/16px/Target" image_alignment="centre" keep_aspect_ratio="true" scale_picture="true" />
+
+						<widget class="text" auto_size="all" style="bold">
+							<translation id="text" translation_id="596177" type="use" value="Player Targets[COMMENT: AREA: Player Targets; SUB-AREA: Targets Panel; FR-BN: FM-23145; TONE: Formal; CHARLIMIT: None; REF-ID: XXXXXX; NOTE; panel header title for a section listing all targets a manager has set for a player]" />
+						</widget>
+
+					</container>
+
+					<widget class="manager_text" auto_size="vertical" multiline="true">
+						<translation id="text" translation_id="597550" type="use" value="An effective negotiating tool that can be used to help improve the performance and happiness of [%person#1-your] players, as well as convincing them to put pen to paper during contract negotiations. Empowering players to be able to take charge of their own future can have very positive outcomes for the club.[COMMENT: AREA: Player Targets; SUB-AREA: Targets Panel; FR-BN: FM-31524; TONE: Formal; CHARLIMIT: None; REF-ID: XXXXXX; NOTE; panel header title for a section listing all targets a manager has set for a player]" />
+					</widget>
+
+				</container>
+
+				<widget class="spacer" />
+				
+			</container>
+
+			<container id="data">
+				<attachment_group class="horizontal_arrange" horizontal_alignment="right,extend" horizontal_gap="12" />
+
+				<widget class="table" id="tabl" layout="-1,-1,125,120" mode="fill_rows, stripe_rows,select_rows,show_bullets,dont_allow_empty_selection" select_event="plaS" auto_size_rows="false" fixed_size_rows="true" default_sort_column="cexi" fixed_row_height="30" row_height="65" row_spacing="2" column_spacing="5">
+					<list id="column_table_properties">
+						<record id="cnam">
+							<record id="column_heading">
+								<translation id="text" translation_id="229689" type="use" value="Name" />
+							</record>
+						</record>
+						<record id="ctar">
+							<record id="column_heading">
+								<translation id="text" translation_id="596178" type="use" value="Targets[COMMENT: AREA: Player Targets; SUB-AREA: Targets Panel; FR-BN: FM-23145; TONE: Formal; CHARLIMIT: None; REF-ID: XXXXXX; NOTE; panel header title for a section listing all targets a manager has set for a player]" />
+							</record>
+						</record>
+						<record id="cpro">
+							<record id="column_heading">
+								<translation id="text" translation_id="289978" type="use" value="Progress[COMMENT:person screen; achievements section; heading for achievements panel - cup progress]" />
+							</record>
+						</record>
+						<record id="cexi">
+							<record id="column_heading">
+								<translation id="text" translation_id="596175" type="use" value="Expected in[COMMENT: AREA: Player Targets; SUB-AREA: Targets Panel; FR-BN: FM-23145; TONE: Formal; CHARLIMIT: None; REF-ID: XXXXXX; NOTE; column header for when a target is expected to be completed]" />
+							</record>
+						</record>
+					</list>
+
+					<list id="column_widget_properties">
+						<record index="1" alignment="left,centre_y" />
+						<record index="2" alignment="left,centre_y" />
+					</list>
+
+					<list id="sort">
+						<integer value="cexi" />
+					</list>
+				</widget>
+
+				<container class="bordered_box" width="406" appearance="boxes/custom/player targets/paper">
+					<layout class="stick_to_sides_attachment" alignment="all" apply_to_children="true" inset="12" />
+
+					<container id="detP" class="property_list_viewer_xml_panel" draw_horizontal_dividers="true">
+						<attachment_group class="vertical_arrange" vertical_alignment="top,extend" vertical_gap="24" />
+
+						<container class="client_object_viewer_xml_panel">
+							<record id="object_property" get_property="Pers" set_property="objt" />
+							<attachment_group class="horizontal_arrange_vertical_autosize_centre" horizontal_alignment="left,extend" horizontal_gap="6" />
+
+							<widget class="object_portrait_picture" width="80" height="80" scale_picture="true" image_alignment="centre">
+								<record id="object_property" get_property="objt" set_property="objt" />
+							</widget>
+
+							<container>
+								<attachment_group class="vertical_arrange_autosize" vertical_gap="4" />
+
+								<widget class="person_button" id="PnmP" info_popup_enabled="true" auto_size="vertical" style="bold" size="medium">
+									<record id="object_property" get_property="PnmP" set_property="valu" />
+								</widget>
+
+								<container>
+									<attachment_group class="horizontal_arrange_vertical_autosize_centre" horizontal_alignment="left,extend" horizontal_gap="6" />
+
+									<widget class="club_button" width="20" height="20" label_disabled="true" icon_alignment="centre" size="medium">
+										<record id="object_property" get_property="Pclb" set_property="valu" />
+									</widget>
+
+									<widget class="player_extra_details_text" auto_size="vertical" short_string="true" size="medium">
+										<record id="object_property" get_property="PExD" set_property="valu" />
+									</widget>
+								</container>
+
+								
+
+								<widget class="player_description_text" auto_size="vertical" colour="faded text">
+									<record id="object_property" get_property="Pdes" set_property="valu" />
+								</widget>
+								
+							</container>
+
+						</container>
+
+						<container>
+							<attachment_group class="vertical_arrange" vertical_alignment="top,extend" vertical_gap="12" />
+
+							<widget class="text" font="title" auto_size="vertical">
+								<record id="object_property" get_property="tCos" set_property="valu" />
+							</widget>
+
+							<container class="scrolling_box">
+								<widget class="simple_data_list" auto_size="vertical" set_property="objt" gap="12">
+									<record id="object_property" get_property="tarL" set_property="valu" />
+									<record id="widget_properties" class="property_list_viewer_xml_panel" file="widgets/player target widget" />
+								</widget>
+							</container>
+
+						</container>
+
+					</container>
+					
+				</container>
+		
+
+			</container>
+			</container>
+
+		</container>
+	</container>
+</panel>
