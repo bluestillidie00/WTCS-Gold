@@ -1,0 +1,117 @@
+<panel >
+	<attachment_group class="horizontal_arrange" horizontal_alignment="middle" horizontal_gap="64"/>
+	<!-- CAPTAIN 
+	<container class="tcs_box_trans" >
+		<attachment_group class="horizontal_arrange_autosize" />
+		<record id="default_properties" auto_size="horizontal" colour="secondary"/>
+
+		<widget class="text" style="bold" alignment="left,centre_y" >
+			<translation id="text" type="new" value="Captain" />
+		</widget>
+
+		<widget class="person_button" alignment="right, centre_y" >
+			<record id="object_property" get_property="TCap"/>
+		</widget>
+	</container> -->
+
+	<!-- VICE CAPTAIN 
+	<container class="tcs_box_trans">
+		<attachment_group class="horizontal_arrange_autosize" />
+		<record id="default_properties" auto_size="horizontal" colour="secondary"/>
+
+		<widget class="text" style="bold" alignment="centre_x,centre_y" >
+			<translation id="text" type="new" value="Vice-Captain" />
+		</widget>
+
+		<widget class="person_button" alignment="right, centre_y" >
+			<record id="object_property" get_property="TVca"/>
+		</widget>
+	</container> -->
+
+<!-- AVERAGE VALUE 
+	<container class="team_container_information_facts_panel" file="none">
+		<attachment_group class="horizontal_arrange_autosize" />
+		<record id="default_properties" auto_size="horizontal" colour="secondary"/>
+
+		<widget class="text" style="bold" alignment="left,centre_y" >
+			<translation id="text" type="use" translation_id="321222" />
+		</widget>
+
+		<widget class="team_container_fact_text" alignment="right, centre_y">
+			<record id="object_property" get_property="Tndn"/>
+		</widget>
+	</container>	 -->
+
+	<!-- AVERAGE WAGE -->
+	<container class="tcs_box_trans">
+		<attachment_group class="horizontal_arrange_autosize" />
+		<record id="default_properties" auto_size="horizontal" colour="secondary"/>
+
+		<widget class="text" style="bold" alignment="left,centre_y" >
+			<translation id="text" type="use" translation_id="321222" />
+		</widget>
+
+		<widget class="cash_cell" alignment="right, centre_y">
+			<record id="object_property" get_property="Caww"/>
+		</widget>
+	</container>
+
+	<!-- AVERAGE AGE -->
+	<container class="tcs_box_trans">
+		<attachment_group class="horizontal_arrange_autosize" />
+		<record id="default_properties" auto_size="horizontal" colour="secondary"/>
+
+		<widget class="text" style="bold" alignment="left,centre_y" >
+			<translation id="text" type="use" translation_id="388872" />
+		</widget>
+
+		<widget class="team_container_fact_text" alignment="right, centre_y">
+			<record id="object_property" get_property="Cvag"/>
+			<integer id="property" value="Cvag" />
+		</widget>
+	</container>
+
+	<!-- PERSONALITY -->
+	<container class="tcs_box_trans">
+		<attachment_group class="horizontal_arrange_autosize" />
+		<record id="default_properties" auto_size="horizontal" colour="secondary"/>
+
+		<widget class="text" style="bold" alignment="left,centre_y" >
+			<translation id="text" type="use" translation_id="319584" />
+		</widget>
+
+		<widget class="club_squad_character_label" alignment="right, centre_y">
+			<record id="object_property" get_property="Csca"/>
+		</widget>
+	</container>
+
+	<!-- POS -->
+	<container class="tcs_box_trans">
+		<attachment_group class="horizontal_arrange_autosize" />
+		<record id="default_properties" auto_size="horizontal" colour="secondary"/>
+
+		<widget class="text" style="bold" alignment="left,centre_y" >
+			<translation id="text" type="use" translation_id="252893" />
+		</widget>
+
+		<widget class="division_position_button" alignment="right, centre_y" >
+			<record id="object_property" get_property="Tpos"/>
+		</widget>
+	</container>
+
+	<!-- EXPECTED POS -->
+	<container class="tcs_box_trans">
+		<attachment_group class="horizontal_arrange_autosize" />
+		<record id="default_properties" auto_size="horizontal" colour="secondary"/>
+
+		<widget class="text" style="bold" alignment="left,centre_y" >
+			<translation id="text" type="use" translation_id="515145" />
+		</widget>
+
+		<widget class="formatted_label" alignment="right, centre_y" format="[%number#1-nth]">
+			<boolean id="force_to_int" value="true" />
+			<record id="object_property" get_property="xGPo"/>
+		</widget>
+	</container>
+
+</panel>
