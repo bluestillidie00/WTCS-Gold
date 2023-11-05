@@ -242,8 +242,7 @@
 
                                     <!-- screen content area -->
                                     <container id="scca" auto_size="horizontal">
-                                        <layout class="stick_to_sides_attachment" alignment="all" apply_to_children="true">
-                                            <global id="inset" name="ui.main_content_margin"/>
+                                        <layout class="stick_to_sides_attachment" alignment="all" apply_to_children="true" inset="8">
                                         </layout>
                                     </container>
                                 </container>
