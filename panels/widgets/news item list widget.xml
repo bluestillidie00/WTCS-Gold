@@ -1,0 +1,49 @@
+<panel height="90">
+	<colour id="unread_headline_text_colour" name="unread headline"/>
+	<colour id="read_headline_text_colour" name="read headline"/>
+	<colour id="selected_headline_text_colour" name="selected headline"/>
+	<colour id="must_respond_headline_text_colour" name="must respond headline"/>
+	<colour id="read_headline_text_style" name="default"/>
+	<colour id="unread_headline_text_style" name="bold"/>
+	<colour id="selected_headline_text_style" name="bold"/>
+	<colour id="unread_category_text_colour" name="unread category"/>
+	<colour id="read_category_text_colour" name="read category"/>
+	<colour id="selected_category_text_colour" name="selected category"/>
+    <colour id="selected_item_alt_bg_colour" name="deadline day fg"/>
+
+	<layout class="stick_to_sides_attachment" alignment="all" inset="0" apply_to_children="true"/>
+
+	<container class="inner_box_no_margin" id="nibx">
+		<attachment_group class="vertical_arrange" vertical_layout="32,-1" vertical_gap="0" vertical_offset="0" />
+
+		<container id="top ">
+			<attachment_group class="horizontal_arrange_vertical_centre" horizontal_layout="16,-1,55" horizontal_offset="16" vertical_offset="0" />
+			<widget class="picture" file="tcs/icons/inbox/category" height="16" width="16" id="lccs"/>
+			<widget class="client_object_label" id="catw" size="small" colour="inbox_text" auto_size="vertical" multiline="false"/>
+
+			<container height="20">
+				<attachment_group class="horizontal_arrange" horizontal_alignment="left,extend" horizontal_offset="0" horizontal_gap="0" vertical_inset="0"/>
+
+				<widget class="picture" id="repw" file="icons/16px/reset" height="16" width="16" red_replacement="text"/>
+				<widget class="label" id="time" size="small" alignment="right" />
+			</container>
+		</container>
+
+		<container id="bot">
+			<attachment_group class="horizontal_arrange" horizontal_alignment="left,extend" horizontal_offset="16" horizontal_gap="0" vertical_alignment="top" vertical_inset="0" />
+
+			<widget class="icon_button" id="fwdi" auto_size="vertical" width="20" show_button_appearance="false" icon="icons/16px/active" alignment="centre" hidden="true" icon_colour="faded text"/>
+			<widget class="text" id="hdlw" auto_size="vertical" multiline="true" colour="inbox_text" font="bold">
+				<record id="auto_size_restrictions">
+					<string id="type" value="property"/>
+					<string id="limit_type" value="maximum"/>
+					<string id="orientation" value="vertical"/>
+					<flags id="target" value="hdlw"/>
+					<integer id="value" value="3"/>
+					<flags id="property" value="restrict_to_lines"/>
+				</record>
+			</widget>
+		</container>
+	</container>
+
+</panel>
