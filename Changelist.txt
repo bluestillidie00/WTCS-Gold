@@ -1,0 +1,12 @@
+v1.3 New Features
+* Skin Remade from Scratch
+* Added next unread/mark all as read/hide inbox list buttons to inbox panel
+* Added details strip to team squad panel
+
+
+
+Mods:
+Added mod to remove team squad stats strip
+
+Credits:
+@Sas/@Tyburn_/@_Ben_ - Various bits of code for team squad panel
